@@ -1,16 +1,83 @@
-# React + Vite
+# Glyph - Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The frontend application for Glyph, a collaborative drawing and social platform.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 18** - UI library
+- **Vite** - Build tool and dev server
+- **Konva.js** - Canvas drawing library
+- **React Router** - Client-side routing
+- **Axios** - HTTP client for API calls
 
-## React Compiler
+## Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+client/
+├── public/           # Static assets (logos, images)
+├── src/
+│   ├── components/   # React components
+│   │   ├── auth/     # Authentication (Login/Register)
+│   ├── services/     # API service layer - TODO
+│   ├── App.jsx       # Main app component with routing
+│   └── main.jsx      # Application entry point
+└── vite.config.js    # Vite configuration
+```
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+```bash
+# Install dependencies
+npm install
+```
+
+### Development
+
+```bash
+# Start dev server (runs on http://localhost:5173)
+npm run dev
+```
+
+### Build for Production
+
+```bash
+# Create optimized production build
+npm run build
+
+# Preview production build locally
+npm run preview
+```
+
+## Features
+
+- 🎨 Canvas-based drawing with Konva.js
+- 🔐 User authentication (login/register)
+- 🌙 Dark mode support
+- 📱 Responsive design
+- 🎭 Real-time drawing tools
+
+## Environment Variables
+
+Create a `.env` file in the client directory:
+
+```env
+VITE_API_URL=http://localhost:5000
+```
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## API Integration
+
+The app connects to the .NET backend API. Make sure the server is running on the configured port (default: 5000).
